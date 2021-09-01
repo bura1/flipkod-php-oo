@@ -18,20 +18,21 @@ class Triangle {
     function get_area()
     {
         if ($this->check_if_possible()) {
-            return ($this->a * $this->height) / 2;
+            $result = ($this->a * $this->height) / 2;
         } else {
-            return "Triangle is not possible";
+            $result = "Triangle is not possible";
         }
-        
+        return $result;
     }
 
     function get_circumference()
     {
         if ($this->check_if_possible()) {
-            return $this->a + $this->b + $this->c;
+            $result = $this->a + $this->b + $this->c;
         } else {
-            return "Triangle is not possible";
-        }    
+            $result = "Triangle is not possible";
+        }
+        return $result;   
     }
 
     private function check_if_possible() 
@@ -39,10 +40,10 @@ class Triangle {
         if ($this->a + $this->b <= $this->c ||
                 $this->a + $this->c <= $this->b ||
                 $this->b + $this->c <= $this->a ) {
-            return false;
+            $result = false;
         } else {
-            return true;
+            $result = true;
         }
+        return $result;
     }
-
 }
